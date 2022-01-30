@@ -10,7 +10,7 @@ import 'font-awesome/css/font-awesome.min.css';
 function App() {
 
   return (
-  <div className='bg-green-700 min-h-screen'>
+  <div className='bg-gray-100 min-h-screen'>
     <Header />
     <BrowserRouter>
       <Routes>
@@ -18,8 +18,8 @@ function App() {
         <Route path="shop" element={<Shop/>}/>
         <Route path="cart"  element={<Cart/>} />
       </Routes>
-      <Link to="/shop">Shop</Link>
-      <Link to="/cart">Cart</Link>
+      <Link className='mr-2 py-2 px-3 bg-indigo-500 font-semibold hover:bg-indigo-600 text-sm text-white uppercase' to="/shop">Shop</Link>
+      <Link className='mr-2 py-2 px-3 bg-indigo-500 font-semibold hover:bg-indigo-600 text-sm text-white uppercase' to="/cart">Cart</Link>
     </BrowserRouter>
     {/* {console.log(React.version)} */}
     

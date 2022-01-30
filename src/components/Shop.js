@@ -8,7 +8,8 @@ const data = {
   bookList: [
     { bookId: 1, bookName : "Master Of The Game", price: 35, category: "thrill", url: 'master_of_the_game.jpg'},
     { bookId: 2, bookName : "Tell Me Your Dreams", price: 45, category: "detective", url: 'tell_me_your_dreams.jpg'},
-    { bookId: 3, bookName : "If Tomorrow Comes", price: 30, category: "thrill", url: 'if_tomorrow_comes.jpg'}
+    { bookId: 3, bookName : "If Tomorrow Comes", price: 30, category: "thrill", url: 'if_tomorrow_comes.jpg'},
+    { bookId: 3, bookName : "Range of Angles", price: 30, category: "thrill", url: 'rage-of-angels.jpg'}
   ],
 }
 
@@ -27,17 +28,28 @@ function Shop() {
   //   console.log('store changed!', store.getState())
   // })}
   return (
-     <div className='bg-gray-700'>
-        <div>
-        {data.bookList.map(item => (
-          <div key={item.bookId}> 
-              <img src={process.env.PUBLIC_URL + `/${item.url}`} />
-              <p>Item: {item.bookName}</p>
-              <p>Price: $ {item.price}</p>
-              <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 text-sm text-white uppercase w-full" onClick={() => dispatch(addItem(item))}>Add To Cart</button>
-              
+     <div className='bg-white'>
+        <div className='max-w-2xl mx-auto py-16 px-4 sm:py-23 sm:px-6 lg:max-w-7xl lg:px-8'>
+          <div className='mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
+            {data.bookList.map(item => (
+                <div className='group relative' key={item.bookId}> 
+                    <div className='w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-8- lg:aspect-none'>
+                       <img className='w-full h-full object-center object-cover lg:w-full lg:h-full' src={process.env.PUBLIC_URL + `/${item.url}`} />
+                    </div>
+                    <div className='flex justify-between mt-4'>
+                        <div>
+                          <h3 className='text-lg text-gray-700 font-medium'>Item: {item.bookName}</h3>
+                          <a href='#' className='font-medium'> Price: $ {item.price}</a>
+                        </div>
+
+                        <div>          
+                          <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 text-sm text-white uppercase px-1 py-1 rounded-sm" onClick={() => dispatch(addItem(item))}>Add To Cart</button>
+                        </div>
+                    </div>
+                    
+                </div>
+              ))}
           </div>
-        ))}
         {/* <button onClick={() => dispatch(clearCart())}>Clear</button> */}
         </div>
      </div>

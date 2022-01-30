@@ -29,7 +29,7 @@ export const cartReducer = (state = initialState, action) => {
         case REDUCE_COUNT: 
             return {
                 ...state,
-                cartItems: state.cartItems.splice(0,1),
+                cartItems: state.cartItems.splice(0, state.cartItems.length - 1),
                 totalPrice: state.totalPrice - action.payload.price
             }
         case ADD_COUNT: 
