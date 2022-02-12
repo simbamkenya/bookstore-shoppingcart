@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { FaCartArrowDown } from 'react-icons/fa';
 
 function Header() {
     return (
@@ -12,6 +13,10 @@ function Header() {
                 <div className='text-sm lg:flex-grow'>
                     <a className='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'>Home</a>
                     <a className='block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'>Home</a>                  
+                </div>
+                <div>
+                <span className='bg-red-600 px-2 py-1 rounded-full text-white text-lg mb-3'>6</span>
+                <span className='text-white mt-2'> <FaCartArrowDown/></span>
                 </div>
             </div>
         </nav>
