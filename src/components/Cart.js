@@ -27,10 +27,10 @@ function Cart() {
                                 {/* <Link to="/shop">Shop</Link>
                             <Link to="/cart">Cart</Link> */}
                         <div className='flex mt-10 mb-2 border-2 border-green-200'>
-                            <h3 className='font-semibold text-gray-600 text-xs uppercase w-2/5'>Product Details</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-xs uppercase w-1/5'>Quantity</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-xs uppercase w-1/5'>Price</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-xs uppercase w-1/5'>Total</h3>
+                            <h3 className='font-semibold text-gray-600 text-lg uppercase w-2/5'>Product Details</h3>
+                            <h3 className='font-semibold text-gray-600 text-center text-lg uppercase w-1/5'>Quantity</h3>
+                            <h3 className='font-semibold text-gray-600 text-center text-lg uppercase w-1/5'>Price</h3>
+                            <h3 className='font-semibold text-gray-600 text-center text-lg uppercase w-1/5'>Total</h3>
                         </div>   
                         <div>
 
@@ -40,7 +40,7 @@ function Cart() {
                             <div className='flex flex-grow'  key={item.bookId}>
                             <div className='flex w-2/5 bg-green-400 border-2 border-red-200'>
                                 <div className='w-20'>
-                                    <img className='h-24' src={process.env.PUBLIC_URL + `/${item.url}`} />
+                                    <img className='h-12' src={process.env.PUBLIC_URL + `/${item.url}`} />
                                 </div>
                                 <div className='w-1/5 flex items-center flex-grow flex-col md:flex-row justify-between border-2 border-green-200'>
                                     <div className=''>
@@ -66,8 +66,8 @@ function Cart() {
                             </div>
                         ))}
                     </div>
-                        <div>
-                        <h1>Total Price: {data.totalPrice}</h1>
+                        <div className='flex flex-col items-end'>
+                        <h1>Total Price: <span className='font-xl text-blue-500'>${data.totalPrice}</span></h1>
                         <button className='font-semibold bg-red-500 rounded-sm text-white text-lg px-2 py-1' onClick={() => dispatch(clearCart())}>Clear Cart</button>
                         </div>
                      </div>
