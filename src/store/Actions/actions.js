@@ -1,4 +1,4 @@
-import {ADD_ITEM, REMOVE_ITEM, CLEAR_CART, REDUCE_COUNT, ADD_COUNT } from './actionTypes'
+import {ADD_ITEM, REMOVE_ITEM, CLEAR_CART, REDUCE_COUNT, ADD_COUNT, COUNT_ITEMS } from './actionTypes'
 
 export const addItem = (item) => {
     return (dispatch) => {
@@ -44,4 +44,12 @@ export const clearCart = () => {
             type: CLEAR_CART
         })
     }   
+}
+
+export const countItems = () => {
+    return (dispatch) => {
+        dispatch({
+            type: COUNT_ITEMS
+        })
+    }
 }

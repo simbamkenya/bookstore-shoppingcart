@@ -21,7 +21,7 @@ function Shop() {
   // console.log(data)
 
   const datai = useSelector(state => state.Test)
-  console.log(datai)
+  // console.log()
   const dispatch = useDispatch()
   // {store.getState()}
   // {store.subscribe(() => {
@@ -31,7 +31,7 @@ function Shop() {
      <div className='bg-white'>
        <div className='min-w-full background-image py-32 bg-no-repeat bg-cover bg-bottom'>
         <div className='container mx-auto  flex'>
-          <div className='w-1/2 px-4 py-6 rounded bg-gray-500 shadow'>
+          <div className='md:w-1/2 w-full px-4 py-6 rounded bg-gray-500 shadow'>
             <h2 className='leading-10 -tracking-wide text-4xl font-bold text-white'>Buy your faviourite, <br/>best prices from our store.</h2>
             <p className='font-semibold text-white leading-6 mt-3'>we have a wide collection of books from authors around the world. The store is commited to keeping reading ethusiast with costant supply of the best writing availale. Shop with us for reliable services</p>
             <button className='text-2xl font-medium tracking-wide rounded mt-3 px-5 py-2 bg-orange-400 uppercase hover:bg-orange-200 transition ease-in-out'>Shop with Us</button>
