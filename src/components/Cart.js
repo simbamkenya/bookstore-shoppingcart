@@ -20,49 +20,52 @@ function Cart() {
      
     return (
         
-        <div className='bg-gray-100'>
-           <div className='container mx-auto mt-10'>
-            <div className='flex shadow-md my-10'>
-                     <div className='flex-1'>
+        <div className='border-2 border-red-300'>
+           <div className='container mx-auto'>
+            <div className='shadow-md my-10 p-4 bg-gray-300 absolute right-0 top-10'>
+                     <div className=''>
                                 {/* <Link to="/shop">Shop</Link>
                             <Link to="/cart">Cart</Link> */}
                         <div className='flex mt-10 mb-2'>
-                            <h3 className='font-semibold text-gray-600 text-lg uppercase w-2/5'>Product Details</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-lg uppercase w-1/5'>Quantity</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-lg uppercase w-1/5'>Price</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-lg uppercase w-1/5'>Total</h3>
+                            <h3 className='font-semibold text-gray-600 text-sm uppercase w-2/5'>Books</h3>
+                            <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/5'>Quantity</h3>
+                            <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/5'>Price</h3>
+                            <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/5'>Total</h3>
                         </div>   
-                        <div>
+                    <div>
 
                         </div>
                     <div className='px-4 py-2 '>
                     {cartItems.map(item => (
-                            <div className='flex flex-grow border-b-2 border-gray-500 py-2'  key={item.bookId}>
-                            <div className='flex w-2/5'>
-                                <div className='w-20'>
+                            <div className='flex flex-groiw border-b-2 border-gray-500 py-2 text-xm'  key={item.bookId}>
+                            <div className='flex w-2/6'>
+                                <div className='mr-2'>
                                     <img className='h-12' src={process.env.PUBLIC_URL + `/${item.url}`} />
                                 </div>
-                                <div className='w-1/5 flex items-center flex-grow flex-col md:flex-row justify-between'>
+                                <div className='w-1/6 items-center'>
                                     <div className=''>
-                                      <p className='text-lg'>{item.bookName}</p> 
-                                    </div>
-                                    <div className=''>
-                                    <button onClick={() => dispatch(removeItem(item))} className="bg-red-500 px-2 py-1 text-white text-sm md:text-lg rounded-sm">Remove</button>
+                                      <p className='text-sm whitespace-now rap'>{item.bookName}</p> 
                                     </div>
                                 </div>
                             </div>
                             <div className='flex items-center justify-center font-bold w-1/5'>
-                                <button className='inline-block px-1 py-2   text-2xl' onClick={() => dispatch(reduceCount(item))}>-</button>
-                                <h2 className='text-xl'>{item.count}</h2>
+                                <button className='inline-block px-1 py-2  text-2xl' onClick={() => dispatch(reduceCount(item))}>-</button>
+                                <h2 className='text-lg'>{item.count}</h2>
                                 <button className='inline-block px-2 py-2  text-2xl' onClick={() => dispatch(addCount(item))}>+</button>
                             </div>
-                            <div className='w-1/5 flex items-center justify-center'>
-                                <p className='text-xl'>$ {item.price}</p>
+                            <div className='w-1/6 flex items-center justify-center'>
+                                <p className='text-lg'>$ {item.price}</p>
                             </div>
                             {/* <p>No of items {Ob ject.keys(data.cartItems.find(item.bookId)).length}</p> */}
-                            <div className='w-1/5 flex items-center justify-center'>
+                            <div className='w-1/6 flex items-center justify-center'>
                                 <p className='text-xl'>$ {item.price * item.count}</p>
                             </div>
+
+                            <div className='w-1/6'>
+                                    <button onClick={() => dispatch(removeItem(item))} className="px-1 py-1 text-white text-sm md:text-lg rounded-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+                                    </button>
+                                    </div>
                             </div>
                         ))}
                     </div>

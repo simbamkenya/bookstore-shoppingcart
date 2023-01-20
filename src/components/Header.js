@@ -1,11 +1,16 @@
-import React from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector} from "react-redux"
 import { Link } from "react-router-dom";
 import { FaCartArrowDown } from 'react-icons/fa';
+import Cart from './Cart';
 
 function Header() {
+    
     const count = useSelector(state => state.Test)
     const totalCount = count.cartItems.length
+    
+    const [isOpen, setIsOpen] = useState(false)
+    const toggling = () => setIsOpen(!isOpen);
     return (
         <nav className='flex items-center justify-center flex-wrap py-6 bg-[#383838] px-6 sticky top-0 z-50'>
             <div className='flex items-center flex-shrink-0 text-white mr-6'>
@@ -18,10 +23,14 @@ function Header() {
                     <a className='block mt-4 lg:inline-block lg:mt-0 text-white font-semibold hover:text-white mr-4 mb-8 md:mb-0 text-lg'>Cart</a>                  
                 </div>
                 <div className='relative'>
+                   <div onClick={toggling}>
                     <span className='bg-red-600 px-3 py-1 rounded-full text-white text-sm mb-3 absolute bottom-2'>{totalCount}</span>
-                    <span className='text-white text-2xl mt-2'> <FaCartArrowDown/></span>
+                    <span className='text-white text-2xl mt-2' ><FaCartArrowDown/></span>
+                   </div>
                 </div>
             </div>
+            {isOpen && <Cart/>}
+
         </nav>
     )
 }
