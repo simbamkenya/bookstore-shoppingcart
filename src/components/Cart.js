@@ -24,21 +24,22 @@ function Cart() {
            <div className='container mx-auto'>
             <div className='shadow-md my-10 p-4 bg-gray-300 absolute right-0 top-10'>
                      <div className=''>
-                                {/* <Link to="/shop">Shop</Link>
-                            <Link to="/cart">Cart</Link> */}
-                            
-                        <div className='flex mt-10 mb-2'>
+                        {cartItems.length === 0 ? '': 
+                         <div className='flex mt-10 mb-2'>
                             <h3 className='font-semibold text-gray-600 text-sm uppercase w-2/6'>Books</h3>
                             <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/6'>Quantity</h3>
                             <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/6'>Price</h3>
                             <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/6'>Total</h3>
                             <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/6'></h3>
-                        </div>   
+                         </div> 
+                        }     
+                          
                     <div>
 
                         </div>
                     <div className='px-2'>
-                    {cartItems.map((item, i) => (
+                    {cartItems.length === 0 ? 'The cart is empty': 
+                     cartItems.map((item, i) => (
                             <div className='flex  border-b-2 font-light border-gray-500  text-xm'  key={item.bookId}>
                             <div className='w-2/6 flex items-center'>
                                 {/* <div className='bg-green-200'>
@@ -70,10 +71,13 @@ function Cart() {
                             </div>
                         ))}
                     </div>
+                    {cartItems.length === 0 ? '': 
                     <div className='flex items-end pt-4'>
-                        <button className='ml-10 font-semibold bg-red-500 rounded-sm text-white text-lg px-2 py-1 md:mr-24' onClick={() => dispatch(clearCart())}>Clear Cart</button>
-                        <h1 className='md:mr-24 mr-10'>Total Amount: <span className='text-xl font-medium'>${data.totalPrice}</span></h1>
-                    </div>
+                       <button className='ml-10 font-semibold bg-red-500 rounded-sm text-white text-lg px-2 py-1 md:mr-24' onClick={() => dispatch(clearCart())}>Clear Cart</button>
+                       <h1 className='md:mr-24 mr-10'>Total Amount: <span className='text-xl font-medium'>${data.totalPrice}</span></h1>
+                    </div>  
+                    }
+                    
                      </div>
                 
             </div>

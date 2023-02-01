@@ -6,10 +6,7 @@ import Sidebar from './Sidebar';
 import Products from './Products';
 
 
-
 function Shop() {
-
- 
   return (
      <div className='bg-white flex'>
         <Sidebar />

@@ -1,4 +1,4 @@
-import {ADD_ITEM, REMOVE_ITEM, CLEAR_CART, REDUCE_COUNT, ADD_COUNT, COUNT_ITEMS } from './actionTypes'
+import {ADD_ITEM, REMOVE_ITEM, CLEAR_CART, REDUCE_COUNT, ADD_COUNT, COUNT_ITEMS, FILTER_CATEGORY, FILTER_AUTHOR } from './actionTypes'
 
 export const addItem = (item) => {
     return (dispatch) => {
@@ -53,3 +53,24 @@ export const countItems = () => {
         })
     }
 }
+
+export const filterCategory = (category) => {
+    return (dispatch) => {
+        // console.log(category)
+        dispatch({
+            type: FILTER_CATEGORY, 
+            payload: category
+        })
+    }
+}
+
+export const filterAuthor = (author) => {
+    return (dispatch) => {
+        dispatch({
+            type: FILTER_AUTHOR, 
+            payload: author
+        })
+    }
+}
+
+
