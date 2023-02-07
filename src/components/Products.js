@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {  useSelector, useDispatch } from "react-redux";
 import { addItem, removeItem, clearItems } from '../store/Actions/actions'
+import Banner from './Banner';
 
 function Products() {
   // const [books, setBooks] = useState({})
@@ -14,9 +15,10 @@ function Products() {
 
   return (
     
-    <div className='max-w-2xl mx-auto py-16 px-4 sm:py-2 sm:px-6 lg:max-w-7xl lg:px-8'>
-        <div className='py-4'>
-            <p className='text-4xl capitalize font-bold italic'>Browse our collection</p>
+    <div className='max-w-2xl mx-auto py-16 px-4 sm:py-2 sm:px-6 lg:max-w-7xl lg:px-8 ml-[12rem]'>
+        <Banner />
+        <div className='py-6 flex justify-center'>
+            <p className='text-4xl capitalize font-bold text-blue-600'>Browse our collection</p>
         </div>
           <div className='mt-2 grid grid-cols-1 gap-y-10 gap-x-2 sm:grid-cols-4 lg:grid-cols-5 xl:gap-x-6 font-roboto'>
             {data.bookList.map(item => (
@@ -31,7 +33,7 @@ function Products() {
                         </div>
 
                         <div>          
-                          <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 text-xs text-white uppercase px-1 py-1 w-full rounded-sm mt-2" onClick={() => dispatch(addItem(item))}>Add to cart</button>
+                          <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 text-xs text-white uppercase px-2 py-2 w-full rounded-sm mt-2" onClick={() => dispatch(addItem(item))}>Add to cart</button>
                         </div>
                     </div>
                     

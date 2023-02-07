@@ -22,15 +22,15 @@ function Cart() {
         
         <div>
            <div className='container mx-auto'>
-            <div className='shadow-md my-10 p-4 bg-gray-300 absolute right-0 top-10'>
+            <div className='shadow-md my-10 p-4 bg-gray-100 absolute right-0 top-10 rounded-lg'>
                      <div className=''>
                         {cartItems.length === 0 ? '': 
-                         <div className='flex mt-10 mb-2'>
-                            <h3 className='font-semibold text-gray-600 text-sm uppercase w-2/6'>Books</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/6'>Quantity</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/6'>Price</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/6'>Total</h3>
-                            <h3 className='font-semibold text-gray-600 text-center text-sm uppercase w-1/6'></h3>
+                         <div className='flex mt-10 mb-2 '>
+                            <h3 className='font-semibold text-gray-800 text-sm uppercase w-2/6'>Books</h3>
+                            <h3 className='font-semibold text-gray-800 text-center text-sm uppercase w-1/6'>Quantity</h3>
+                            <h3 className='font-semibold text-gray-800 text-center text-sm uppercase w-1/6'>Price</h3>
+                            <h3 className='font-semibold text-gray-800 text-center text-sm uppercase w-1/6'>Total</h3>
+                            <h3 className='font-semibold text-gray-800 text-center text-sm uppercase w-1/6'></h3>
                          </div> 
                         }     
                           
@@ -65,7 +65,7 @@ function Cart() {
 
                             <div className='w-1/6 flex items-center justify-center'>
                                     <button onClick={() => dispatch(removeItem(item))} className="px-1 py-1 text-white text-sm md:text-lg rounded-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"fill='red' height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12"fill='red' height="12" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
                                     </button>
                                     </div>
                             </div>

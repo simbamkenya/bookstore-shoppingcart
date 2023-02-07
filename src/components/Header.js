@@ -19,8 +19,8 @@ function Header() {
             </div>
             <div className='w-full block flex-grow lg:flex lg:item-center lg:w-auto'>
                 <div className='text-sm lg:flex-grow '>
-                    <a className='block mt-4 lg:inline-block lg:mt-0 text-white font-semibold hover:text-white mr-4 text-lg'>Shop</a>
-                    <a className='block mt-4 lg:inline-block lg:mt-0 text-white font-semibold hover:text-white mr-4 mb-8 md:mb-0 text-lg'>Cart</a>                  
+                    {/* <a className='block mt-4 lg:inline-block lg:mt-0 text-white font-semibold hover:text-white mr-4 text-lg'>Shop</a>
+                    <a className='block mt-4 lg:inline-block lg:mt-0 text-white font-semibold hover:text-white mr-4 mb-8 md:mb-0 text-lg'>Cart</a>                   */}
                 </div>
                 <div className='relative'>
                    <div onClick={toggling}>

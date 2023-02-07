@@ -14,7 +14,7 @@ function Sidebar() {
   console.log(authors)
 
   return (
-    <div className='w-96 bg-green-100'>
+    <div className='w-48 bg-green-100 fixed h-full'>
         <h2 className='text-lg uppercase font-medium mt-4 px-4'>Category</h2>
         <ul className='p-4 space-y-6 flex flex-col'>
             {categories.map(category => (
