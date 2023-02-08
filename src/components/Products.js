@@ -27,9 +27,12 @@ function Products() {
                        <img className='w-full h-full object-center object-cover lg:w-full lg:h-full' src={process.env.PUBLIC_URL + `/${item.url}`} />
                     </div>
                     <div className='mt-4'>
-                        <div className='flex justify-between'>
-                          <h3 className='text-sm text-gray-700 font-medium'>{item.bookName}</h3>
-                          <a href='#' className='font-medium text-sm'> $ {item.price}</a>
+                        <div className='flex justify-between items-center'>
+                          <div>
+                          <h3 className='text-gray-700 font-medium'>{item.bookName}</h3>
+                          <h3 className='text-sm text-gray-700 font-medium'>By: {item.author}</h3>
+                          </div>
+                          <a href='#' className='font-medium text-lg text-black'> ${item.price}</a>
                         </div>
 
                         <div>          
